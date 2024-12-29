@@ -1,0 +1,11 @@
+body {
+    background-color: silver;
+}
+img {
+    width: 600px;
+    height: 400px;
+}
+
+img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
