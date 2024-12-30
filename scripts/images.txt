@@ -1,0 +1,3 @@
+./img/wide.jpg,./img/wide2.png
+./img/reisuit.jpg,./img/reissued.png
+./img/target.jpg,./img/target2.png

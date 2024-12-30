@@ -1,15 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const images = [
-        { src: 'img/wide.jpg', hoverSrc: './img/wide2.png' },
-        { src: 'img/reisuit.jpg', hoverSrc: './img/reissued.png' },
-       
-
-    ];
+    fetch('./scripts/images.txt')
+    .then(response => response.text())
+    .then(data => {
+        const images = data.trim().split('\n').map(line => {
+            const [src, hoverSrc] = line.split(',');
+            return { src, hoverSrc };
+        });
 
     let currentIndex = 0;
     const carouselImage = document.getElementById('carouselImage');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    console.log('preveBtn is: ', prevBtn);
+    console.log('nex btn is ', nextBtn);
 
     const updateImage = () => {
         console.log("current index" , currentIndex)
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.addEventListener('mouseover', onMouseOver);
         img.addEventListener('mouseout', onMouseOut);
     };
+    //setting to button behaviour
 
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
@@ -39,9 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
         updateImage();
-        addHoverEffect(carouselImage);//important for makeeffect
+        addHoverEffect(carouselImage);//important for makeeffect    
     });
 
     addHoverEffect(carouselImage);
     updateImage();
+})
+.catch(error => console.error('Error loading images:', error));
 });
