@@ -1,3 +1,10 @@
 ./img/wide.jpg,./img/wide2.png
 ./img/reisuit.jpg,./img/reissued.png
 ./img/target.jpg,./img/target2.png
+./img/nevertheless1.png,./img/nevertheless.png
+./img/timing.png,./img/timing2.png
+./img/whirlwind.png,./img/whirlwind2.png
+./img/broad.jpg,./img/broad2.png
+./img/subset.png,./img/subset.png
+./img/lumped.png,./img/lumped2.png
+./img/regardless.png,./img/regardless2.png
